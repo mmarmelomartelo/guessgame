@@ -8,8 +8,8 @@
 
 :root {
     --background-neutral: #f1e9dc;
-    --background-incorrect: #ea560e;
-    --background-correct: #9cd0ff;
+    --background-incorrect: #f44336; 
+    --background-correct: #95d268;
 }
 
 html,
@@ -34,7 +34,6 @@ body.correct {
     --background: var(--background-correct);
 }
 
-
 body.incorrect {
     --background: var(--background-incorrect);
 }
@@ -57,13 +56,43 @@ body.incorrect {
 }
 
 .button {
-    --background: var(--background-neutral);
     border: 1px solid #453B3B;
-    background-color: var--background) border-radius: 5px;
+    background-color: #f1e9dc border-radius: 5px;
     padding: 5px 10px;
     color: #453B3B;
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
-    font-weight: 800;
+    font-weight: 400;
+    font-size: 0.8rem;
 }
+
+.button:hover {
+    border: 3px solid #453B3B;
+    
+}
+
+.button.correct {
+    background-color: var(--background-correct);
+}   
+
+.button.incorrect {
+    background-color: var(--background-incorrect);  
+}
+
+.start-button, .next-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #00aaff;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.hide {
+    display: none;
+  }
