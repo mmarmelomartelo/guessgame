@@ -34,31 +34,24 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
+    question.answers.forEach((answer) => {
+        const button = document.createElement("button");
         button.innerText = answer.text;
-        button.classList.add('button');
+        button.classList.add("button");
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener('click', selectAnswer);
+        button.addEventListener("click", selectAnswer);
         answerButtonsElement.appendChild(button);
     });
 }
 
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element);
-    if (correct) {
-        element.classList.add("correct");
-    } else {
-        element.classList.add("incorrect");
+function resetState() {
+    clearStatusClass(document.body);
+    nextButton.classList.add("hide");
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove("correct");
-    element.classList.remove("incorrect");
 }
 
 function selectAnswer(e) {
@@ -81,15 +74,14 @@ function setStatusClass(element, correct) {
     if (correct) {
         element.classList.add("correct");
     } else {
-        element.classList.add("wrong");
+        element.classList.add("incorrect");
     }
 }
 
 function clearStatusClass(element) {
     element.classList.remove("correct");
-    element.classList.remove("wrong");
+    element.classList.remove("incorrect");
 }
-
 
 const questions = [{
         question: 'What is the capital of Sweden?',
