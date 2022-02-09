@@ -1,11 +1,19 @@
-const startButton = document.getElementById('start-button')
-const questionContainerElement = document.getElementById("question-container")
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
-startButton.addEventListener('click', startGame)
+const startButton = document.getElementById('start-button');
+const nextButton = document.getElementById('next-button');
+const questionContainerElement = document.getElementById("question-container");
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+
+let shuffledQuestions, currentQuestionIndex;
+
+startButton.addEventListener('click', startGame);
+
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+});
 
 function startGame() {
-    console.log("I am workin!");
     startButton.classList.add("hide")
     questionContainerElement.classList.remove("hide")
     /** shuffledQuestions implement a randow array. It generate a number that is
@@ -20,6 +28,7 @@ function startGame() {
 }
 
 function setNextQuestion() {
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -39,62 +48,67 @@ function showQuestion(question) {
 }
 
 
-//function resetState() {}
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
 
 
-function selectAnswer(e) {
-
-}
-
-let shuffledQuestions, currentQuestionIndex
 
 
-const questions = [{
-        question: 'What is the capital of Sweden?',
-        answers: [{
-                text: 'Stockholm',
-                correct: true
-            },
-            {
-                text: 'Lisbon',
-                correct: false
-            }
-        ]
-    },
-    {
-        question: 'What is the capital of Finland?',
-        answers: [{
-                text: 'Helsink',
-                correct: true
-            },
-            {
-                text: 'Stockholm',
-                correct: false
-            }
-        ]
-    },
-    {
-        question: 'What is the capital of Norway?',
-        answers: [{
-                text: 'Oslo',
-                correct: true
-            },
-            {
-                text: 'Helsink',
-                correct: false
-            }
-        ]
-    },
-    {
-        question: 'What is the capital of Denmark?',
-        answers: [{
-                text: 'Copenhagen',
-                correct: true
-            },
-            {
-                text: 'Oslo',
-                correct: false
-            }
-        ]
-    },
-]
+    function selectAnswer(e) {
+
+    }
+
+
+    const questions = [{
+            question: 'What is the capital of Sweden?',
+            answers: [{
+                    text: 'Stockholm',
+                    correct: true
+                },
+                {
+                    text: 'Lisbon',
+                    correct: false
+                }
+            ]
+        },
+        {
+            question: 'What is the capital of Finland?',
+            answers: [{
+                    text: 'Helsink',
+                    correct: true
+                },
+                {
+                    text: 'Stockholm',
+                    correct: false
+                }
+            ]
+        },
+        {
+            question: 'What is the capital of Norway?',
+            answers: [{
+                    text: 'Oslo',
+                    correct: true
+                },
+                {
+                    text: 'Helsink',
+                    correct: false
+                }
+            ]
+        },
+
+        {
+            question: 'What is the capital of Denmark?',
+            answers: [{
+                    text: 'Copenhagen',
+                    correct: true
+                },
+                {
+                    text: 'Oslo',
+                    correct: false
+                }
+            ]
+        }
+    ];
