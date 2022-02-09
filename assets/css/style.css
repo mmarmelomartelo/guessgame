@@ -39,3 +39,13 @@ body.correct {
 body.incorrect {
     --background: var(--background-incorrect);
 }
+
+.container {
+    width: 800px;
+    height: fit-content;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
