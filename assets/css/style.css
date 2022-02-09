@@ -23,9 +23,8 @@ body {
     height: 100vh;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
-    font-size: larger;
-    color: #4a4644;
-
+    font-size: xx-large;
+    color: #453B3B;
     justify-content: center;
     align-items: center;
     background-color: var(--background);
@@ -44,8 +43,27 @@ body.incorrect {
     width: 800px;
     height: fit-content;
     max-width: 80%;
-    background-color: white;
+    background-color: #d3cdcd;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.button {
+    --background: var(--background-neutral);
+    border: 1px solid #453B3B;
+    background-color: var--background) border-radius: 5px;
+    padding: 5px 10px;
+    color: #453B3B;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    font-weight: 800;
 }
