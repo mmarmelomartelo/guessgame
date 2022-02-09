@@ -25,14 +25,26 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('button')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
+
 }
-//function showQuestion(question) {}
 
 
 //function resetState() {}
 
 
-//function selectAnswer {}
+function selectAnswer(e) {
+
+}
 
 let shuffledQuestions, currentQuestionIndex
 
