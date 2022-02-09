@@ -38,14 +38,51 @@ let shuffledQuestions, currentQuestionIndex
 
 
 const questions = [{
-    question: 'What is the capital of Sweden?',
-    answers: [{
-            text: 'Stockholm',
-            correct: true
-        },
-        {
-            text: 'Lisbon',
-            correct: false
-        }
-    ]
-}]
+        question: 'What is the capital of Sweden?',
+        answers: [{
+                text: 'Stockholm',
+                correct: true
+            },
+            {
+                text: 'Lisbon',
+                correct: false
+            }
+        ]
+    },
+    {
+        question: 'What is the capital of Finland?',
+        answers: [{
+                text: 'Helsink',
+                correct: true
+            },
+            {
+                text: 'Stockholm',
+                correct: false
+            }
+        ]
+    },
+    {
+        question: 'What is the capital of Norway?',
+        answers: [{
+                text: 'Oslo',
+                correct: true
+            },
+            {
+                text: 'Helsink',
+                correct: false
+            }
+        ]
+    },
+    {
+        question: 'What is the capital of Denmark?',
+        answers: [{
+                text: 'Copenhagen',
+                correct: true
+            },
+            {
+                text: 'Oslo',
+                correct: false
+            }
+        ]
+    },
+]
